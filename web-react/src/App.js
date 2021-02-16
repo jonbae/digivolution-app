@@ -30,6 +30,7 @@ import {
   People as PeopleIcon,
 } from '@material-ui/icons'
 import Dashboard from './components/Dashboard'
+import Digivolution from './components/Digivolution'
 
 function Copyright() {
   return (
@@ -211,6 +212,15 @@ export default function App() {
                 <ListItemText primary="Users" />
               </ListItem>
             </Link>
+
+            <Link to="/digivolution" className={classes.navLink}>
+              <ListItem button>
+                <ListItemIcon>
+                  <PeopleIcon />
+                </ListItemIcon>
+                <ListItemText primary="Digivolution" />
+              </ListItem>
+            </Link>
           </List>
           <Divider />
         </Drawer>
@@ -221,6 +231,7 @@ export default function App() {
               <Route exact path="/" component={Dashboard} />
               <Route exact path="/businesses" component={UserList} />
               <Route exact path="/users" component={UserList} />
+              <Route exact path="/digivolution" component={Digivolution} />
             </Switch>
 
             <Box pt={4}>
