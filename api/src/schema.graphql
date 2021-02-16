@@ -1,3 +1,12 @@
+type Digimon {
+  id: ID!
+  name: String 
+  stage: String
+  digivolutions: [Digimon] @relation(name: "DIGIVOLVE", direction: OUT)
+  dedigivolutions: [Digimon] @relation(name: "DEDIGIVOLVE", direction: OUT)
+}
+
+
 type User {
   userId: ID!
   name: String
@@ -62,3 +71,5 @@ type Query {
       statement: "MATCH (r:Review) WITH r.stars AS stars, COUNT(*) AS count ORDER BY stars RETURN {stars: stars, count: count}"
     )
 }
+
+
